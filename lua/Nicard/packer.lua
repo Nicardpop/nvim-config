@@ -10,7 +10,15 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
+-- Liver-server
+use {
+        'barrett-ruth/live-server.nvim',
+        run = 'npm add -g live-server', -- Replace 'pnpm' with 'npm' if needed
+        cmd = { 'LiveServerStart', 'LiveServerStop' },
+        config = function()
+            require('live-server').setup()
+        end,
+    }
   -- Wakatime 
  use 'wakatime/vim-wakatime'
   use({ 'rose-pine/neovim', as = 'rose-pine',config = function()

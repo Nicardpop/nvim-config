@@ -14,7 +14,7 @@ require("nvim-tree").setup({
     },
   },
 })
-
+-- a --> for adding a new file / directory (for directory use the "/" after the name of the directory ex: user/config/newdir/)  
 -- Keybindings for nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true }) -- Toggle file explorer
 vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true, silent = true }) -- Refresh the tree
