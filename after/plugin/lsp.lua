@@ -38,6 +38,7 @@ require'lspconfig'.dartls.setup{
 require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
+    'jdtls',       -- Java
     'cssls',       -- CSS
     'html',        -- HTML
     'tsserver',    -- JavaScript/TypeScript
@@ -81,15 +82,6 @@ cmp.setup({
   })
 })
 -- Filetype-specific settings for Dart
-cmp.setup.filetype('dart', {
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip'},
-  }, {
-    { name = 'buffer' },
-  })
-})
-require('flutter-tools')
 -- for dart files auto formating
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.dart",

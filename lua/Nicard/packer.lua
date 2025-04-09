@@ -27,7 +27,21 @@ use {
   end
   })
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
+  -- flutter boilerplate
+use {
+  'wa11breaker/flutter-bloc.nvim',
+  requires = {
+    'nvimtools/none-ls.nvim',
+  },
+  config = function()
+    require('flutter-bloc').setup({
+      bloc_type = 'default', -- Choose from: 'default', 'equatable', 'freezed'
+      use_sealed_classes = false,
+      enable_code_actions = true,
+    })
+  end
+}
+-- harpoon 
   use ('theprimeagen/harpoon')
   use('mbbill/undotree')
   use({'neovim/nvim-lspconfig'})
@@ -57,20 +71,8 @@ use {
     require("nvim-autopairs").setup({})
   end
 }
-use {
-  'akinsho/flutter-tools.nvim',
-  requires = 'nvim-lua/plenary.nvim',
-  config = function()
-    require("flutter-tools").setup({})
-  end
-}
 
   -- Install dartlang-snippets for Dart snippets
-  use {
-    'natebosch/dartlang-snippets',
-    config = function()
-    end
-  }
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -83,4 +85,13 @@ use({
   end
 })
 
+use {
+  'mfussenegger/nvim-jdtls',
+  ft = { 'java' },
+  config = function()
+    -- You can leave this empty if you're setting up jdtls manually elsewhere
+  end
+}
+use { 'rcarriga/nvim-dap' }  
 end)
+
