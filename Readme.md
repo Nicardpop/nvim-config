@@ -105,15 +105,5 @@ This cheat sheet contains the most important text editing, navigation, and mode 
 | gu | Visual | Lowercase selection |
 | >> | Normal | Indent line |
 | << | Normal | Unindent line |
-
 ---
 
-# Repeat and Count Commands
-
-| Key | Mode | Action |
-|----|------|------|
-| . | Normal | Repeat last change |
-| 3dd | Normal | Delete 3 lines |
-| 5x | Normal | Delete 5 characters |
-
-Example:
